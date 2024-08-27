@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura Generada</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="tituloPrincipal">
+            <div class="logoTitulo">
+                <img src="/static/img/logo.jpg" class="logo">
+                <h1>Facturación Colombia2024</h1>
+            </div>
+            <h4>Nit: 91258726345-1</h4>
+            <h4>Dirección: Cra 113 #92-65 Bogota</h4>
+            <h4>Teléfono: 5881882</h4>
+        </div>
+        <div class="tituloSecundario">
+            <h4>Fecha y hora: {{ fecha }}</h4>
+        </div>
+        <div>
+            <h4>Nombre Cliente: {{ nombreCliente }}</h4><br>
+            <h4>Nit o CC: {{ nitCliente }}</h4>
+            <h4>Teléfono: {{ telefono }}</h4>
+            <h4>Email: {{ email }}</h4>
+        </div>
+    </header>
+    <main>
+        <table class="tabla1">
+            <tr class="EncabezadosTabla">
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unid.</th>
+                <th>Iva %</th>
+                <th>Precio Total Unids.</th>
+            </tr>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto['nombre'] }}</td>
+                <td>{{ producto['cantidad'] }}</td>
+                <td>{{ "%.2f" % producto['precio_unitario'] }}</td>
+                <td>{{ "%.2f" % producto['iva'] }}%</td>
+                <td>{{ "%.2f" % producto['precio_total'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table class="tabla2">
+            <tr>
+                <td>Subtotal:</td>
+                <td>{{ "%.2f" % subtotal }}</td>
+            </tr>
+            <tr>
+                <td>Total Iva:</td>
+                <td>{{ "%.2f" % total_iva }}</td>
+            </tr>
+            <tr>
+                <td>Valor a Pagar:</td>
+                <td>{{ "%.2f" % valor_a_pagar }}</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <div class="presentacion__enlaces">
+            <!-- Botón de Borrar -->
+            <button type="button" class="button1" onclick="window.location.href='/'">Borrar</button>
+            <!-- Botón de Imprimir -->
+            <button type="button" class="button1" onclick="window.print()">Imprimir</button>
+        </div>
+    </footer>
+</body>
+</html>
+

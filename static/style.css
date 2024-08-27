@@ -1,0 +1,40 @@
+.logoTitulo{
+    display: flex;/*colocar de forma horizontal los elementos*/
+}
+.logo{/*crear minitura de una imagen*/
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100px;      
+}
+
+.tituloSecundario{
+    display: flex;/*colocar de forma horizontal los elementos*/
+    gap: 40px;/*separar los elementos de filas o colomnas en este caso dos textos siempre va acompañado de flex direccion*/    
+}
+.tablaTitulos{
+    border: 2px solid black;/* le coloca un borde blanco*/
+}
+
+.EncabezadosTabla{
+    background-color: aqua;/*fondo de las celdas de la fila de la tabla*/
+    border: 2px solid black;/* le coloca un borde blanco*/
+}
+.tabla2{
+    margin: 2% 10%;/*margen que separa elementos un 5%*/
+}
+
+.button1{/* configurando carracteristicas de los botones*/
+    width: 150px;/*tamaño hacia los lados*/
+    background-color: #22D4FD;/*color de fondo del boton*/
+    padding: 10px 0px;/*tamaño vertical*/
+    border-radius: 16px;/* redondear el boton*/
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.tabla2{
+    font-weight: 700;
+}

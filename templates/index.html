@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="tituloPrincipal">
+            <div class="logoTitulo">
+                <img src="/static/img/logo.jpg" class="logo">
+                <h1>Facturación Colombia2024</h1>
+            </div>
+            <h4>Nit: 91258726345-1</h4>
+            <h4>Dirección: Cra 113 #92-65 Bogota</h4>
+            <h4>Teléfono: 5881882</h4>
+        </div>
+        <div class="tituloSecundario">
+            <h4>Fecha y hora: {{ fecha }}</h4>
+        </div>
+        <form action="/generar_factura" method="POST">
+            <div>
+                <label for="nombreCliente">Nombre Cliente:</label><br>
+                <input type="text" name="nombreCliente" required/><br>
+                <label for="nitCliente">Nit o CC:</label><br>
+                <input type="text" name="nitCliente" required/><br>
+            </div>
+            <div>
+                <label for="telefono">Teléfono:</label><br>
+                <input type="text" name="telefono" required/><br>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" required/><br>
+            </div>     
+
+            <main>
+                <table class="tabla1">
+                    <tr class="EncabezadosTabla">
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unid.</th>
+                        <th>Iva %</th>
+                        <th>Precio Total Unids.</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="producto1">
+                                <option value=""></option>
+                                <option value="119000-19">Pantalones</option>
+                                <option value="116000-16">Camisas</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="cantidadProductos1" required/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="producto2">
+                                <option value=""></option>
+                                <option value="119000-19">Pantalones</option>
+                                <option value="116000-16">Camisas</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="cantidadProductos2" required/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="presentacion__enlaces">
+                    <button type="reset" class="button1">Borrar</button>
+                    <button type="submit" class="button1">Generar</button>
+                </div>
+            </main>
+        </form>
+    </header>
+</body>
+</html>
